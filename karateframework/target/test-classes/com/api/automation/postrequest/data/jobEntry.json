@@ -1,0 +1,1 @@
+{ "jobId": 4, "jobTitle": "QA Engineer", "jobDescription": "To develop andriod application", "experience": [ "Google", "Apple", "Cypress" ], "project": [ { "projectName": "Movie App", "technology": [ "SQL Lite", "Gradle" ] } ] }

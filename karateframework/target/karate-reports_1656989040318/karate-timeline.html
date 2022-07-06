@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-2","id":1},{"content":"pool-1-thread-3","id":2},{"content":"pool-1-thread-1","id":3},{"content":"pool-1-thread-4","id":4},{"content":"pool-1-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"com\/api\/automation\/getrequest\/validateXMLArray[1:7]","start":1656985894909,"end":1656985894937,"title":"com\/api\/automation\/getrequest\/validateXMLArray[1:7] 19:51:34.909-19:51:34.937 To get the data in XML format","className":"failed"},{"id":2,"group":2,"content":"com\/api\/automation\/getrequest\/validateXMLArray[2:22]","start":1656985894922,"end":1656985894938,"title":"com\/api\/automation\/getrequest\/validateXMLArray[2:22] 19:51:34.922-19:51:34.938 To get the data in XML format and validate using fuzzy matcher","className":"failed"},{"id":3,"group":3,"content":"com\/api\/automation\/getrequest\/ValidationUsingFile[1:7]","start":1656985894652,"end":1656985894903,"title":"com\/api\/automation\/getrequest\/ValidationUsingFile[1:7] 19:51:34.652-19:51:34.903 To get the data in JSON format","className":"failed"},{"id":4,"group":1,"content":"com\/api\/automation\/getrequest\/Variables[1:9]","start":1656985894652,"end":1656985894753,"title":"com\/api\/automation\/getrequest\/Variables[1:9] 19:51:34.652-19:51:34.753 To create a Variable"},{"id":5,"group":2,"content":"com\/api\/automation\/getrequest\/Variables[2:23]","start":1656985894652,"end":1656985894755,"title":"com\/api\/automation\/getrequest\/Variables[2:23] 19:51:34.652-19:51:34.755 Acces the variable"},{"id":6,"group":2,"content":"com\/api\/automation\/getrequest\/getRequest2[1:4]","start":1656985894760,"end":1656985894760,"title":"com\/api\/automation\/getrequest\/getRequest2[1:4] 19:51:34.760-19:51:34.760 To test the get end point with JSON data","className":"failed"},{"id":7,"group":2,"content":"com\/api\/automation\/getrequest\/getRequest2[2:11]","start":1656985894763,"end":1656985894763,"title":"com\/api\/automation\/getrequest\/getRequest2[2:11] 19:51:34.763-19:51:34.763 To test the get end point with xml data","className":"failed"},{"id":8,"group":2,"content":"com\/api\/automation\/getrequest\/responseMatcher[1:7]","start":1656985894766,"end":1656985894903,"title":"com\/api\/automation\/getrequest\/responseMatcher[1:7] 19:51:34.766-19:51:34.903 To get the data in JSON format","className":"failed"},{"id":9,"group":4,"content":"com\/api\/automation\/getrequest\/responseMatcher[2:39]","start":1656985894896,"end":1656985894969,"title":"com\/api\/automation\/getrequest\/responseMatcher[2:39] 19:51:34.896-19:51:34.969 To get the data in xml format","className":"failed"},{"id":10,"group":5,"content":"com\/api\/automation\/getrequest\/responseMatcher[3:71]","start":1656985894896,"end":1656985894921,"title":"com\/api\/automation\/getrequest\/responseMatcher[3:71] 19:51:34.896-19:51:34.921 To get the data in JSON format and validate using negate condition","className":"failed"},{"id":11,"group":1,"content":"com\/api\/automation\/getrequest\/responseMatcher[4:93]","start":1656985894895,"end":1656985894903,"title":"com\/api\/automation\/getrequest\/responseMatcher[4:93] 19:51:34.895-19:51:34.903 To get the data in JSON format and validate a specific property"},{"id":12,"group":2,"content":"com\/api\/automation\/getrequest\/validateJSONArray[1:7]","start":1656985894909,"end":1656985894919,"title":"com\/api\/automation\/getrequest\/validateJSONArray[1:7] 19:51:34.909-19:51:34.919 To get the data in JSON format"},{"id":13,"group":3,"content":"com\/api\/automation\/getrequest\/validateJSONArray[2:24]","start":1656985894909,"end":1656985894923,"title":"com\/api\/automation\/getrequest\/validateJSONArray[2:24] 19:51:34.909-19:51:34.923 To get the data in JSON format and validate using fuzzy matcher"},{"id":14,"group":4,"content":"com\/api\/automation\/getrequest\/getRequest[1:8]","start":1656985894652,"end":1656985894890,"title":"com\/api\/automation\/getrequest\/getRequest[1:8] 19:51:34.652-19:51:34.890 To get all the data from application in JSON format"},{"id":15,"group":5,"content":"com\/api\/automation\/getrequest\/getRequest[2:15]","start":1656985894652,"end":1656985894890,"title":"com\/api\/automation\/getrequest\/getRequest[2:15] 19:51:34.652-19:51:34.890 To get all the data from application in JSON format using path variable"},{"id":16,"group":1,"content":"com\/api\/automation\/getrequest\/getRequest[3:25]","start":1656985894759,"end":1656985894890,"title":"com\/api\/automation\/getrequest\/getRequest[3:25] 19:51:34.759-19:51:34.890 To get all the data from application in JSON format using path variable"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
